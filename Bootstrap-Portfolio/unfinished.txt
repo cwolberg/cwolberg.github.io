@@ -1,0 +1,7 @@
+I think the layout repsonsivness is unfinished and requires more bootstrap attributes like md,sm, and xs, so to look good on mobile.
+
+Much of the css could probably also be converted to bootstrap syntax in the html
+
+Did not use media queries
+
+The grid layout needs a lot of work

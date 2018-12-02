@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Chris Wolberg</title>
+  <!-- Linking Reset CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!--Linking Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <!--Linking Stylesheet-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
+</head>
+
+<body>
+
+  <header id="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+              <a id="logo">Chris Wolberg</a>
+            </div>
+            <nav class="navbar mt-3 float-right">
+              <!--using bootstrap nav bar-->
+              <!--bootstrap nav links and styles-->
+              <div class="col-md-auto"><a class="nav-link d-inline pl-2 ml-2 text-muted border-left light" href="index.html">About</a></div>
+              <div class="col-md-auto"><a class="nav-link d-inline pl-2 ml-2 text-muted border-left light" href="portfolio.html">Portfolio</a></div>
+              <div class="col-md-auto"><a class="nav-link d-inline pl-2 ml-2 text-muted border-left light" href="contact.html">Contact</a></div>
+            </nav>
+          </div>
+        </div>
+  </header>
+
+  <div id="main-container" class="container">
+    <section class="main-section">
+      <h1>Contact</h1>
+
+      <form id="contact-form">
+        <ul>
+          <li>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required="required">
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" required="required">
+          </li>
+          <li>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required="required"></textarea>
+          </li>
+        </ul>
+        <input type="submit">
+      </form>
+
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      Copyright &copy; Chris Wolberg
+    </div>
+  </footer>
+</body>
+
+</html>
