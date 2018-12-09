@@ -1,0 +1,12 @@
+Add Style
+
+Validate user key used, must be letter defined in array
+
+Add header img
+
+Add dynamic dog names
+
+Add music
+
+Fix Images
+

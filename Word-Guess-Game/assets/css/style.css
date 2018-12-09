@@ -1,0 +1,60 @@
+#header{
+    text-align:center;
+}
+
+#name{
+    text-align: center;
+}
+
+
+/*html {
+    margin: 0;
+    height: 100%;
+  }
+ 
+  body {
+    margin: 0;
+    height: 100%;
+    background: black;
+ 
+  }
+ 
+  h1 {
+    font-family: ‘Permanent Marker’, cursive;
+    text-align: center;
+    margin:0;
+    color: #ccc;
+    padding: 20px;
+    font-size: 80px;
+  }
+  h2 {
+    font-family: ‘Permanent Marker’, cursive;
+    text-align: center;
+    color: #ccc;
+    font-size: 60px;
+  }
+  .image {
+      padding: 20px;
+      align-content: center;
+      position: relative;
+      margin-left: 465px;
+  }
+  .instructions {
+    color: blue;
+    padding: 40px;
+    text-align: center;
+    font-family: ‘Paprika’, cursive;
+  }
+ 
+  @-webkit-keyframes planet-rotate {
+    to {
+      -webkit-transform: rotate(1turn);
+    }
+  }
+ 
+  @keyframes planet-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  */
