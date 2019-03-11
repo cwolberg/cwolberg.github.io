@@ -4,7 +4,7 @@ This App uses JSON , Express, html, and javascript to submit form data that comp
 After filling out a survey, this friend-matching program will pair you with another similar friend.
 
 ## Live Link 
- - https://git.heroku.com/salty-lake-25590.git
+ - https://salty-lake-25590.herokuapp.com/
 
 
 ## Technologies Used
