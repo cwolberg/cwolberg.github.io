@@ -1,0 +1,29 @@
+{
+  "name": "nodeexpresshandlebars",
+  "version": "1.0.0",
+  "description": "adds burgers and devours them",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "author": "chris wolberg",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwolberg/FriendFinder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cwolberg/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/cwolberg/FriendFinder#readme"
+}
+
