@@ -21,10 +21,11 @@ var routes = require("./controllers/burgers_controllers.js");
 
 app.use(routes);
 
+/*
 app.get("/", function(req, res) {
   res.json(path.join(__dirname, "views/index.html"));
 });
-
+*/
 
 app.listen(PORT, function() {
   console.log("Listening on port:%s", PORT);
