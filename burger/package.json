@@ -19,11 +19,11 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwolberg/cwolberg.github.io/tree/master/burger"
+    "url": "git+https://github.com/cwolberg/cwolberg.github.io/tree/master/burgers"
   },
   "bugs": {
-    "url": "https://github.com/cwolberg/cwolberg.github.io/tree/master/burger/issues"
+    "url": "https://github.com/cwolberg/cwolberg.github.io/tree/master/burgers/issues"
   },
-  "homepage": "https://github.com/cwolberg/cwolberg.github.io/tree/master/burger#readme"
+  "homepage": "https://github.com/cwolberg/cwolberg.github.io/tree/master/burgers#readme"
 }
 
