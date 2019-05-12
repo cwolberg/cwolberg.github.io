@@ -1,0 +1,114 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>GIPHY API</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    		<style>
+				body {
+						background-color: black;
+					}
+				h3 {
+					color:white;
+				}
+					</style>
+    </head>
+<body>
+
+<h3 class="text-center">Click a button to display 10 gifs and their rating, or add your own through searching</p><p>Click on picture to start/stop the animation.</h4>
+
+<div id="buttonItems"></div>
+
+
+<form>
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" id="input" class="form-control" placeholder="Add something">
+        </div>
+        <input id="addNewButton" type="submit" class="btn btn-success" value="Add a new button">
+        <span id="entry" style="color: white; background: red"></span>
+    </div>
+</form>
+
+<div id="ratings"></div>
+
+
+<script type="text/javascript">
+	var images = ["Star Wars", "Star Trek", "Dog", "Hockey","Surfing","Food"];
+   
+	  var image = "";
+function showButtons () {
+    $("#buttonItems").empty();
+    $("#input").val("");
+    for (var i = 0; i < images.length; i++) {
+        var button = $("<button class='btn btn-primary'>");
+        button.addClass("space");
+        button.attr("search-term", images[i]);
+        button.text(images[i]);
+        $("#buttonItems").append(button);
+        $("#buttonItems").append(" ");
+    }
+}
+showButtons();
+$("#addNewButton").on("click", function(event) {
+    $("#entry").empty();
+    event.preventDefault();
+    var input = $("#input").val().trim();
+    var search = $(this).attr("search-term");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=2&api_key=wVDKaT558SQw9PEN5mr5EK3S0OhDOqLG";
+        $.ajax({ url: queryURL, method: "GET"}).done(function(response) {
+        if (response.pagination.total_count >= 10) {
+            images.push(input);
+            showButtons(); }
+        else if (response.pagination.total_count === 0) {
+            $("#entry").html(" Sorry, no results. Try again."); }
+        else if (response.pagination.total_count === 1) { $("#entry").html(" Sorry, only 1 result. Try again."); }
+        else { $("#entry").html(" Sorry, only " + response.pagination.total_count + " results for this. Try again."); }
+        $("#input").val("");
+        });
+});
+$(document).on("click", ".space", display);
+function display() {
+    $("#entry").empty();
+    var search = $(this).attr("search-term");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&limit=10&api_key=wVDKaT558SQw9PEN5mr5EK3S0OhDOqLG";
+    $.ajax({ url: queryURL, method: "GET"}).done(function(response) {
+        for (var j = 0; j < response.data.length; j++) {
+
+            var active = response.data[j].images.fixed_width.url;
+            var still = response.data[j].images.fixed_width_still.url;
+            var rating = "Rating: " + (response.data[j].rating).toUpperCase();
+            var image = $("<img>");
+            
+  
+            $("#ratings").css("color", "white");
+    
+            var ratingDiv = $("<div id='ratingDiv'>" + rating + "</div>");
+            $(ratingDiv).css({"text-align":"center", "font-size":"20px", "width":"200", "display":"block"});
+            image.attr({"active":active, "still":still, "src":still, "state":"still"});
+
+            var ratingAndImage = $("<div>");
+            $(ratingAndImage).css({"float":"left"});
+            $(ratingAndImage).prepend(ratingDiv, image);
+            $("#ratings").prepend(ratingAndImage);
+
+            $(image).on("click", function(event) {
+                $("#entry").empty();
+                var state = $(this).attr("state");
+                var source = $(this).attr("src");
+                if (state === "still") {
+                $(this).attr("src", $(this).attr("active"));
+                $(this).attr("state", "active"); }
+                else {
+                $(this).attr("src", $(this).attr("still"));
+                $(this).attr("state", "still"); } 
+            });
+        }
+   });
+}
+</script>
+
+</body>
+</html>
