@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Template</title>
+    <!-- Linking Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--Linking Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Added link to the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Linking Styles CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--Linking Script Below-->
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<!--End of Head / View-Port / Beginning of Body/Content-->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+
+    <script>
+        window.onload = function () {
+            document.getElementById('confetti').style.display = 'none';
+            document.getElementById('yt').style.display = 'none';
+            document.getElementById('hb').style.display = 'none';
+        };
+    </script>
+
+<div id ="whitespace"> </div>
+    <div class ="message">
+        Click/Tap the Seal!
+    </div>
+<img id ="hb"src="happybirthday.png">  
+ <div>
+
+        <input type="image" id="seal" src="seal.jpg" onclick="play()">
+
+    </div>
+    <canvas id="confetti"></canvas>
+
+    <script src="confetti.js"></script>
+
+    <script>
+
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+
+            var x = document.getElementById("myDIV");
+            if (confetti.style.display === "none") {
+                confetti.style.display = "block"
+                yt.style.display = "block";
+                hb.style.display = "block";
+            } else {
+                confetti.style.display = "none";
+            }
+        }
+    </script>
+
+
+<div id="yt">
+<iframe 
+src="https://www.youtube.com/embed/MtrvDyAs9RM" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe><br>
+<button id="play" type="button" class="btn btn-primary btn-lg">Tap above to watch seals. HappyBday!</button>
+</div>
+
+
+
+
+    <audio id="audio" src="horn.mp3"></audio>
+
+</body>
+
+</html>
